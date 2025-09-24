@@ -1,3 +1,9 @@
+/*
+1 - Baixar e instalar Git - https://git-scm.com/downloads
+2 - Baixar e instalar Flutter - https://docs.flutter.dev/get-started/install/windows
+
+*/
+
 import 'package:flutter/material.dart';
 
 /// Função principal que inicia a aplicação Flutter
