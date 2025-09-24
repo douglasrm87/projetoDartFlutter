@@ -1,7 +1,8 @@
 /*
 1 - Baixar e instalar Git - https://git-scm.com/downloads
 2 - Baixar e instalar Flutter - https://docs.flutter.dev/get-started/install/windows
-
+C:\VSCodeDev\flutter\bin\flutter run
+C:\VSCodeDev\flutter\bin\flutter pub outdated
 */
 
 import 'package:flutter/material.dart';
@@ -20,13 +21,13 @@ class MinhaApp extends StatelessWidget {
     return MaterialApp(
       // Título da aplicação que aparece na barra de tarefas
       title: 'Primeira App Flutter',
-      
+
       // Configuração do tema da aplicação
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true, // Habilita o Material Design 3
       ),
-      
+
       // Define a página inicial da aplicação
       home: const MinhaHomePage(),
     );
@@ -48,13 +49,13 @@ class MinhaHomePage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      
+
       // Corpo do aplicativo centralizado
       body: const Center(
         child: Text(
           'Alô, Mundo!',
           style: TextStyle(
-            fontSize: 30,          // Tamanho da fonte
+            fontSize: 30, // Tamanho da fonte
             fontWeight: FontWeight.bold, // Peso da fonte (negrito)
           ),
         ),
@@ -62,5 +63,3 @@ class MinhaHomePage extends StatelessWidget {
     );
   }
 }
-
-
