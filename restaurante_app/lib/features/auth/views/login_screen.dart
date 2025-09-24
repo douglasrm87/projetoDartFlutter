@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../controllers/auth_controller.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({super.key});
 
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -46,41 +46,41 @@ class LoginScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 Obx(() => ElevatedButton(
-                  onPressed: _authController.isLoading
-                      ? null
-                      : () async {
-                          if (_emailController.text.isEmpty ||
-                              _passwordController.text.isEmpty) {
-                            Get.snackbar(
-                              'Erro',
-                              'Preencha todos os campos',
-                              snackPosition: SnackPosition.BOTTOM,
-                            );
-                            return;
-                          }
+                      onPressed: _authController.isLoading
+                          ? null
+                          : () async {
+                              if (_emailController.text.isEmpty ||
+                                  _passwordController.text.isEmpty) {
+                                Get.snackbar(
+                                  'Erro',
+                                  'Preencha todos os campos',
+                                  snackPosition: SnackPosition.BOTTOM,
+                                );
+                                return;
+                              }
 
-                          final success = await _authController.login(
-                            _emailController.text,
-                            _passwordController.text,
-                          );
+                              final success = await _authController.login(
+                                _emailController.text,
+                                _passwordController.text,
+                              );
 
-                          if (success) {
-                            Get.offAllNamed('/home');
-                          } else {
-                            Get.snackbar(
-                              'Erro',
-                              'Email ou senha inválidos',
-                              snackPosition: SnackPosition.BOTTOM,
-                            );
-                          }
-                        },
-                  style: ElevatedButton.styleFrom(
-                    minimumSize: const Size.fromHeight(50),
-                  ),
-                  child: _authController.isLoading
-                      ? const CircularProgressIndicator()
-                      : const Text('Entrar'),
-                )),
+                              if (success) {
+                                Get.offAllNamed('/home');
+                              } else {
+                                Get.snackbar(
+                                  'Erro',
+                                  'Email ou senha inválidos',
+                                  snackPosition: SnackPosition.BOTTOM,
+                                );
+                              }
+                            },
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size.fromHeight(50),
+                      ),
+                      child: _authController.isLoading
+                          ? const CircularProgressIndicator()
+                          : const Text('Entrar'),
+                    )),
               ],
             ),
           ),
